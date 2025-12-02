@@ -20,6 +20,7 @@ Pemilik repo: https://github.com/reamura87
 Untuk mendownload project ke komputer:
 
 git clone https://github.com/reamura87/silih-prognet-D.git
+
 cd silih-prognet-D
 
 2. Update sebelum mulai bekerja
@@ -33,5 +34,7 @@ git pull origin main
 Setelah melakukan perubahan (menambah file, edit, dll):
 
 git add .
+
 git commit -m "Deskripsi perubahan"
+
 git push origin main
