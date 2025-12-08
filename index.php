@@ -1,18 +1,53 @@
-<html>
+<!DOCTYPE html>
+<html lang="id">
 <head>
-    <title>SILIH - Sistem Peminjaman Inventaris & Fasilitas Himpunan</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SILIH - Website Peminjaman Barang</title>
+    <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-    <h1>SILIH : Sistem Informasi Layanan & Inventaris Himpunan</h1>
+    <!-- Header -->
+    <header>
+        <div class="logo">SILIH</div>
+        
+        <nav>
+            <a href="#kategori">Kategori</a>
+            <a href="peminjaman/list.php">Peminjam</a>
+            <a href="#kontak">Kontak</a>
+        </nav>
 
-    <?php
-    date_default_timezone_set('Asia/Makassar');
-    echo "<p>Hari ini: " . date("l, d M Y H:i") . "</p>";
-    ?>
+        <div class="search-container">
+            <input type="text" placeholder="Cari Barang">
+        </div>
 
-    <nav>
-        <a href="peminjaman/list.php">📋 Daftar Peminjaman</a> | 
-        <a href="peminjaman/form.php">➕ Pinjam Fasilitas</a>
-    </nav>
+        <div class="header-icons">
+            <a href="#cart" title="Keranjang">🛒</a>
+            <a href="#profile" title="Profil">👤</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>WEBSITE<br>PEMINJAMAN<br>BARANG</h1>
+            <p>Mulai meminjam barang-barang dari kampus Teknologi Informasi dengan mudah dengan Website Silih</p>
+            <a href="peminjaman/form.php" class="cta-button">Cari Barang</a>
+        </div>
+
+        <div class="hero-image">
+            <div class="furniture-circle">
+                <div class="furniture-icon">🪑</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Info Section -->
+    <section class="info-section">
+        <?php
+        date_default_timezone_set('Asia/Makassar');
+        echo "<p>Sistem Informasi Layanan & Inventaris Himpunan | " . date("l, d M Y H:i") . " WITA</p>";
+        ?>
+    </section>
 </body>
 </html>
