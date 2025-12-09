@@ -18,7 +18,7 @@
         </nav>
 
         <div class="search-container">
-            <input type="text" placeholder="Cari Barang">
+            <input type="text" placeholder="Cari Barang" autofocus>
         </div>
 
         <div class="header-icons">
