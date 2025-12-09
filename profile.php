@@ -29,7 +29,7 @@
         <p class="profile-role">Mahasiswa Teknologi Informasi</p>
 
         <div class="profile-info">
-            <p><strong>Email:</strong> contohuser@email.com</p>
+            <p><strong>Email:</strong> contohuser@gmail.com</p>
             <p><strong>No. Telp:</strong> 0812-3456-7890</p>
             <p><strong>NIM:</strong> 2405551969</p>
         </div>
