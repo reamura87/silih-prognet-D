@@ -14,7 +14,7 @@
         <nav>
             <a href="#kategori">Kategori</a>
             <a href="peminjaman/list.php">Peminjam</a>
-            <a href="#kontak">Kontak</a>
+            <a href="kontak.php">Kontak</a>
         </nav>
 
         <div class="search-container">
