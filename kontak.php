@@ -8,7 +8,6 @@
 </head>
 <body>
 
-<!-- Header -->
 <header>
     <div class="logo">SILIH</div>
 
@@ -19,14 +18,12 @@
     </nav>
 </header>
 
-<!-- CONTACT SECTION -->
 <section class="contact-section">
     <h1>Kontak Kami</h1>
     <p class="subtitle">Hubungi pihak terkait untuk informasi peminjaman fasilitas kampus</p>
 
     <div class="contact-container">
 
-        <!-- Kaprodi -->
         <div class="contact-card">
             <img src="assets/img/kaprodi.jpg" alt="Foto Kaprodi">
             <h2>Bapak Kaprodi</h2>
@@ -35,7 +32,6 @@
             <p>📧 kaprodi@unud.ac.id</p>
         </div>
 
-        <!-- Ketua Himpunan -->
         <div class="contact-card">
             <img src="assets/img/kethim.jpg" alt="Foto Ketua Himpunan">
             <h2>Ketua Himpunan</h2>
