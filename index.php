@@ -23,7 +23,7 @@
 
         <div class="header-icons">
             <a href="#cart" title="Keranjang">🛒</a>
-            <a href="#profile" title="Profil">👤</a>
+            <a href="profile.php" title="Profil">👤</a>
         </div>
     </header>
 
