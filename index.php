@@ -32,7 +32,7 @@
         <div class="hero-content">
             <h1>WEBSITE<br>PEMINJAMAN<br>BARANG</h1>
             <p>Mulai meminjam barang-barang dari kampus Teknologi Informasi dengan mudah dengan Website Silih</p>
-            <a href="peminjaman/form.php" class="cta-button">Cari Barang</a>
+            <a href="peminjaman/form.php" class="cta-button">List Item</a>
         </div>
 
         <div class="hero-image">
