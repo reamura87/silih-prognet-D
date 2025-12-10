@@ -1,14 +1,13 @@
 <?php
 session_start();
 if (isset($_SESSION['username'])) {
-    header("Location: profile.php"); // Jika sudah login, redirect ke profil
+    header("Location: profile.php");
     exit();
 }
 
 $error_message = "";
 
 if (isset($_POST['login'])) {
-    // Ambil data login dari form
     $username = $_POST['username'];
     $password = $_POST['password'];
 
@@ -19,7 +18,7 @@ if (isset($_POST['login'])) {
 
     if (mysqli_num_rows($result) > 0) {
         $_SESSION['username'] = $username;
-        header("Location: profile.php"); // Arahkan ke halaman profil setelah login berhasil
+        header("Location: profile.php");
         exit();
     } else {
         $error_message = "Username atau Password salah!";
