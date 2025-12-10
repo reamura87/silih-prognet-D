@@ -1,5 +1,4 @@
 <?php
-// Daftar barang tanpa database
 $items = [
     ["nama" => "Mic", "stok" => 5, "img" => "../assets/img/mic.png"],
     ["nama" => "HT", "stok" => 3, "img" => "../assets/img/ht.png"],
@@ -23,7 +22,6 @@ $items = [
 </head>
 <body>
 
-<!-- NAVBAR -->
 <header>
     <div class="logo">SILIH</div>
     <nav>

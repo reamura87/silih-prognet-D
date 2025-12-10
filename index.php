@@ -13,7 +13,7 @@
         
         <nav>
             <a href="#kategori">Kategori</a>
-            <a href="peminjaman/list.php">Peminjam</a>
+            <a href="peminjaman/list.php">Peminjaman</a>
             <a href="kontak.php">Kontak</a>
         </nav>
 
