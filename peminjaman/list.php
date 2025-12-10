@@ -41,7 +41,7 @@ $items = [
             <img src="<?= $item['img']; ?>" alt="<?= $item['nama']; ?>">
             <h2><?= $item["nama"]; ?></h2>
             <p class="stok">Stok: <strong><?= $item["stok"]; ?></strong></p>
-            <a href="#" class="btn-pinjam">Pinjam</a>
+            <a href="form.php?nama=<?= urlencode($item['nama']); ?>&stok=<?= $item['stok']; ?>" class="btn-pinjam">Pinjam</a>
         </div>
     <?php endforeach; ?>
 

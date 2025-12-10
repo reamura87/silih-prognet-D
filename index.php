@@ -24,7 +24,7 @@
         <div class="header-icons">
             <a href="#cart" title="Keranjang">🛒</a>
             <a href="profile.php" title="Profil">👤</a>
-            <a href="login.php" title="Login">🔑 Login</a> 
+            <a href="login.php" title="Login">Login</a> 
         </div>
     </header>
 
