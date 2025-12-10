@@ -24,6 +24,7 @@
         <div class="header-icons">
             <a href="#cart" title="Keranjang">🛒</a>
             <a href="profile.php" title="Profil">👤</a>
+            <a href="login.php" title="Login">🔑 Login</a> 
         </div>
     </header>
 
@@ -49,5 +50,9 @@
         echo "<p>Sistem Informasi Layanan & Inventaris Himpunan | " . date("l, d M Y H:i") . " WITA</p>";
         ?>
     </section>
+
+    <footer>
+        <p>&copy; 2025 SILIH - Sistem Informasi Layanan & Inventaris Himpunan</p>
+    </footer>
 </body>
 </html>
