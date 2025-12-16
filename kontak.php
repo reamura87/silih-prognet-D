@@ -13,7 +13,7 @@
 
     <nav>
         <a href="index.php">Beranda</a>
-        <a href="peminjaman/list.php">Peminjaman papua</a>
+        <a href="peminjaman/list.php">Peminjaman</a>
         <a href="kontak.php">Kontak</a>
         <a href="profile.php">Profil</a>
     </nav>
