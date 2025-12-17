@@ -32,14 +32,12 @@ if (isset($_POST['login'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - SILIH</title>
-    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="assets/login.css">
 </head>
 <body>
     <header>
         <div class="logo">SILIH</div>
         <nav>
-            <a href="index.php">Beranda</a>
-            <a href="peminjaman/list.php">Peminjaman</a>
             <a href="kontak.php">Kontak</a>
         </nav>
     </header>
@@ -66,6 +64,9 @@ if (isset($_POST['login'])) {
             </form>
 
             <p>Belum punya akun? <a href="register.php">Daftar di sini</a></p>
+
+            <!-- Tombol Kembali ke Index -->
+            <a href="index.php" class="back-button">Kembali ke Beranda</a>
         </div>
     </section>
 
