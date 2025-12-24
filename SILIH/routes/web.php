@@ -1,7 +1,10 @@
-<?php
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\PeminjamanController;
 
-use Illuminate\Support\Facades\Route;
+Route::get('/login', [AuthController::class, 'showLogin']);
+Route::post('/login', [AuthController::class, 'login']);
+Route::post('/logout', [AuthController::class, 'logout']);
 
-Route::get('/', function () {
-    return view('welcome');
+Route::middleware('auth')->group(function () {
+    Route::get('/peminjaman', [PeminjamanController::class, 'index']);
 });
