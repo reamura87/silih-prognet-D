@@ -1,0 +1,213 @@
+/* Reset default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Header */
+header {
+    background: linear-gradient(135deg, #8B1A1A 0%, #A52A2A 100%);
+    padding: 15px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+header .logo {
+    font-size: 30px;
+    color: white;
+    font-weight: bold;
+}
+
+header nav {
+    display: flex;
+    gap: 20px;
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: opacity 0.3s;
+}
+
+header nav a:hover {
+    opacity: 0.8;
+}
+
+/* Registrasi Section */
+.login-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    background-color: #fafafa;
+    padding: 40px;
+}
+
+.login-form {
+    background: white;
+    border-radius: 8px;
+    padding: 30px;
+    max-width: 380px;  /* Menyesuaikan ukuran form agar lebih kecil */
+    width: 100%;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efek transisi */
+}
+
+.login-form:hover {
+    transform: translateY(-5px);  /* Efek angkat saat hover */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading */
+.login-form h2 {
+    font-size: 24px;
+    color: #8B1A1A;
+    margin-bottom: 20px;
+}
+
+/* Form Labels */
+.login-form label {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 8px;
+    display: block;
+}
+
+/* Input fields */
+.login-form input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0 15px 0; /* Adjusted for a more compact design */
+    border-radius: 25px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/* Input focus style */
+.login-form input:focus {
+    border-color: #8B1A1A;
+    box-shadow: 0 0 5px rgba(139, 26, 26, 0.5);
+}
+
+/* Daftar Button */
+.login-form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #8B1A1A;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    margin-bottom: 15px;
+}
+
+.login-form button:hover {
+    background-color: #A52A2A;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(139, 26, 26, 0.3);
+}
+
+/* Teks di bawah form registrasi (Sudah punya akun?) */
+.login-form p {
+    font-size: 12px;
+    color: #333;
+}
+
+/* Tautan untuk Login */
+.login-form a {
+    color: #8B1A1A;  /* Warna merah sesuai tema */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s; /* Efek transisi saat hover */
+}
+
+/* Hover effect pada tautan */
+.login-form a:hover {
+    color: #A52A2A;  /* Mengubah warna saat hover */
+    text-decoration: underline;
+}
+
+/* Back Button */
+.login-form .back-button {
+    width: 100%;
+    padding: 12px;
+    background: transparent;
+    color: #8B1A1A;
+    font-size: 14px;
+    font-weight: 600;
+    border: 1px solid #8B1A1A;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: 15px;
+    text-align: center;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.login-form .back-button:hover {
+    background: #8B1A1A;
+    color: white;
+    border-color: #8B1A1A;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(139, 26, 26, 0.3);
+}
+
+/* Error Message */
+.error-message {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+/* Footer */
+footer {
+    background: linear-gradient(135deg, #8B1A1A 0%, #A52A2A 100%);
+    padding: 20px 0;
+    text-align: center;
+    color: white;
+    font-size: 14px;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .login-section {
+        padding: 20px;
+    }
+
+    .login-form {
+        padding: 30px;
+    }
+
+    .login-form h2 {
+        font-size: 24px;
+    }
+}
