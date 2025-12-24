@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Login - SILIH</title>
     <link rel="stylesheet" href="{{ asset('assets/login.css') }}">
+
 </head>
 <body>
 

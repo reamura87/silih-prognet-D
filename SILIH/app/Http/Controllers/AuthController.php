@@ -3,34 +3,33 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Session;
+use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
-    public function showLogin()
+    public function showRegister()
     {
-        return view('auth.login');
+        return view('auth.register');
     }
 
-    public function login(Request $request)
+    public function register(Request $request)
     {
-        $user = DB::table('users')
-            ->where('username', $request->username)
-            ->where('password', $request->password)
-            ->first();
+        // Validasi
+        $request->validate([
+            'name' => 'required|min:3',
+            'email' => 'required|email|unique:users',
+            'password' => 'required|min:6|confirmed'
+        ]);
 
-        if ($user) {
-            Session::put('username', $user->username);
-            return redirect('/profile');
-        }
+        // Simpan user
+        User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password)
+        ]);
 
-        return back()->with('error', 'Username atau Password salah!');
-    }
-
-    public function logout()
-    {
-        Session::flush();
-        return redirect('/login');
+        // Redirect ke login
+        return redirect('/login')->with('success', 'Registrasi berhasil');
     }
 }
