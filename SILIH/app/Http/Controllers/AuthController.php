@@ -13,6 +13,11 @@ class AuthController extends Controller
         return view('auth.register');
     }
 
+     public function showLogin()
+    {
+        return view('auth.login');
+    }
+
     public function register(Request $request)
     {
         // Validasi
@@ -32,4 +37,6 @@ class AuthController extends Controller
         // Redirect ke login
         return redirect('/login')->with('success', 'Registrasi berhasil');
     }
+
+    
 }
