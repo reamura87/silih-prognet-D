@@ -12,7 +12,6 @@
         <div class="logo">SILIH</div>
         
         <nav>
-            <a href="#kategori">Kategori</a>
             <a href="peminjaman/list.php">Peminjaman</a>
             <a href="kontak.php">Kontak</a>
         </nav>
