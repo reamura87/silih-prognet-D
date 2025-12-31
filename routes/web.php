@@ -1,26 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PageController;
+use App\Http\Controllers\BarangController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/barang', function () {
-    return view('barang');
-});
-
-Route::get('/ruangan', function () {
-    return view('ruangan');
-});
+Route::get('/', [PageController::class, 'home'])->name('home');
+Route::get('/barang', [BarangController::class, 'index'])->name('barang');
+Route::get('/ruangan', [PageController::class, 'ruangan'])->name('ruangan');
+Route::post('/barang/{id}/pinjam', [BarangController::class, 'pinjam'])->name('barang.pinjam');
+Route::get('/barang', [BarangController::class, 'index'])->name('barang');
+Route::post('/barang/{id}/pinjam', [BarangController::class, 'pinjam'])->name('barang.pinjam');
