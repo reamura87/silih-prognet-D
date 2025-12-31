@@ -10,4 +10,9 @@ class Barang extends Model
     use HasFactory;
 
     protected $fillable = ['nama', 'stok'];
+
+    public function peminjamans()
+    {
+        return $this->hasMany(Peminjaman::class);
+    }
 }

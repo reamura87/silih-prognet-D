@@ -28,6 +28,7 @@
 <nav>
     <a href="{{ route('home') }}">Home</a>
     <a href="{{ route('barang') }}">Barang</a>
+    <a href="{{ route('peminjaman.index') }}">Peminjaman</a>
     <a href="{{ route('ruangan') }}">Ruangan</a>
 </nav>
 

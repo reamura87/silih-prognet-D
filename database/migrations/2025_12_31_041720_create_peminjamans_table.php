@@ -12,6 +12,7 @@ return new class extends Migration {
             $table->foreignId('barang_id')->constrained()->onDelete('cascade');
             $table->string('nama_peminjam');
             $table->date('tanggal_pinjam');
+            $table->date('tanggal_kembali')->nullable();
             $table->timestamps();
         });
     }
