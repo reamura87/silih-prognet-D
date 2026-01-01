@@ -16,10 +16,6 @@ class BarangController extends Controller
 
     public function pinjam($id)
 {
-    if (Peminjaman::where('barang_id',$id)
-    ->where('status','Dipinjam')->exists()) {
-    return back()->with('error','Barang sedang dipinjam');
-}
     $barang = Barang::findOrFail($id);
 
     if ($barang->stok <= 0) {

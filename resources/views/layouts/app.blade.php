@@ -31,31 +31,30 @@
 <body>
 
 <nav>
-    {{-- UMUM --}}
     <a href="{{ route('home') }}">Home</a>
 
     @auth
-        {{-- USER & ADMIN --}}
         <a href="{{ route('barang') }}">Barang</a>
         <a href="{{ route('peminjaman.index') }}">Peminjaman</a>
         <a href="{{ route('ruangan') }}">Ruangan</a>
 
-        {{-- KHUSUS ADMIN --}}
         @if(auth()->user()->role === 'admin')
             <a href="{{ route('dashboard') }}">Dashboard</a>
         @endif
 
-        {{-- LOGOUT --}}
         <form action="{{ route('logout') }}" method="POST" style="display:inline;">
             @csrf
-            <button type="submit">Logout</button>
+            <button type="submit"
+                style="background:none;border:none;color:white;cursor:pointer;">
+                Logout
+            </button>
         </form>
     @else
-        {{-- BELUM LOGIN --}}
         <a href="{{ route('login') }}">Login</a>
         <a href="{{ route('register') }}">Register</a>
     @endauth
 </nav>
+
 
 @if(session('success'))
     <div style="background:#d4edda; padding:10px; margin:10px; color:#155724;">
