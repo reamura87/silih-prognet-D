@@ -10,37 +10,39 @@ use App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
-| AUTH ROUTES (login, register, logout)
+| AUTH ROUTES
 |--------------------------------------------------------------------------
 */
 Auth::routes();
 
 /*
 |--------------------------------------------------------------------------
-| GUEST (BELUM LOGIN)
+| GUEST
 |--------------------------------------------------------------------------
 */
 Route::get('/', function () {
     return redirect()->route('login');
-});
+})->name('root');
 
 /*
 |--------------------------------------------------------------------------
 | AUTHENTICATED USERS
 |--------------------------------------------------------------------------
 */
-Route::middleware(['auth'])->group(function () {
+Route::middleware('auth')->group(function () {
 
-    // Home setelah login
+    // Home
     Route::get('/home', [PageController::class, 'home'])->name('home');
 
-    // Umum
+    // Barang
     Route::get('/barang', [BarangController::class, 'index'])->name('barang');
     Route::post('/barang/{id}/pinjam', [BarangController::class, 'pinjam'])->name('barang.pinjam');
 
+    // Peminjaman
     Route::get('/peminjaman', [PeminjamanController::class, 'index'])->name('peminjaman.index');
     Route::post('/peminjaman/{id}/kembali', [PeminjamanController::class, 'kembali'])->name('peminjaman.kembali');
 
+    // Ruangan
     Route::get('/ruangan', [PageController::class, 'ruangan'])->name('ruangan');
 });
 

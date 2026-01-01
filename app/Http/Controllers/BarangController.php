@@ -25,16 +25,15 @@ class BarangController extends Controller
     // simpan riwayat peminjaman
     Peminjaman::create([
         'barang_id' => $barang->id,
-        'nama_peminjam' => 'Mahasiswa',
+        'user_id' => auth()->id(),
         'tanggal_pinjam' => now(),
-        'status' => 'dipinjam'
+        'status' => 'Dipinjam'
     ]);
 
     // kurangi stok
-    $barang->stok -= 1;
-    $barang->save();
+    $barang->decrement('stok');
 
-    return redirect()->back()->with('success', 'Barang berhasil dipinjam!');
+    return back()->with('success', 'Barang berhasil dipinjam!');
 }
 
 }
