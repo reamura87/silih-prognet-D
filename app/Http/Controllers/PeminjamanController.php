@@ -17,19 +17,20 @@ class PeminjamanController extends Controller
     {
         $peminjaman = Peminjaman::findOrFail($id);
 
-        if (!$peminjaman->tanggal_kembali) {
-            return back()->with('error', 'Barang Sudah Dikembalikan');
-        }
         // tambah stok
-        $barang = $peminjaman->barang;
+        $barang = Barang::findOrFail($peminjaman->barang_id);
         $barang->stok += 1;
         $barang->save();
+
         // set tanggal_kembali
+        $peminjaman->status = 'Dikembalikan';
         $peminjaman->tanggal_kembali = now();
         $peminjaman->save();
 
-        // hapus data peminjaman
-        $peminjaman->delete();
+        $peminjaman->update([
+            'status' => 'Dikembalikan',
+            'tanggal_kembali' => now()
+        ]);
 
         return redirect()->back()->with('success', 'Barang berhasil dikembalikan');
     }

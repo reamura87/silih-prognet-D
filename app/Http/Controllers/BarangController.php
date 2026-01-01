@@ -26,7 +26,8 @@ class BarangController extends Controller
     Peminjaman::create([
         'barang_id' => $barang->id,
         'nama_peminjam' => 'Mahasiswa',
-        'tanggal_pinjam' => now()
+        'tanggal_pinjam' => now(),
+        'status' => 'dipinjam'
     ]);
 
     // kurangi stok

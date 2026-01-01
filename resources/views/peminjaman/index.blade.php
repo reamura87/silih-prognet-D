@@ -9,28 +9,44 @@
             <th>Barang</th>
             <th>Peminjam</th>
             <th>Tgl Pinjam</th>
+            <th>Tgl Kembali</th>
             <th>Status</th>
             <th>Aksi</th>
         </tr>
     </thead>
     <tbody>
-        @forelse ($peminjamans as $p)
-        <tr>
-            <td>{{ $p->barang->nama }}</td>
-            <td>{{ $p->nama_peminjam }}</td>
-            <td>{{ $p->tanggal_pinjam }}</td>
-            <td>Dipinjam</td>
-            <td>
-                <form action="{{ route('peminjaman.kembali', $p->id) }}" method="POST">
-                    @csrf
-                    <button type="submit">Kembalikan</button>
-                </form>
-            </td>
-        </tr>
+        @forelse($peminjamans as $peminjaman)
+            <tr>
+                <td>{{ $peminjaman->barang->nama }}</td>
+                <td>{{ $peminjaman->nama_peminjam }}</td>
+                <td>{{ $peminjaman->tanggal_pinjam }}</td>
+                <td>{{ $peminjaman->tanggal_kembali ?? '-' }}</td>
+
+                <td>
+                    @if($peminjaman->status == 'Dipinjam')
+                        <span style="color:red;font-weight:bold;">Dipinjam</span>
+                    @else
+                        <span style="color:green;font-weight:bold;">Dikembalikan</span>
+                    @endif
+                </td>
+
+                <td>
+                    @if($peminjaman->status == 'Dipinjam')
+                        <form action="{{ route('peminjaman.kembali', $peminjaman->id) }}" method="POST">
+                            @csrf
+                            <button type="submit">Kembalikan</button>
+                        </form>
+                    @else
+                        -
+                    @endif
+                </td>
+            </tr>
         @empty
-        <tr>
-            <td colspan="5" align="center">Belum ada peminjaman</td>
-        </tr>
+            <tr>
+                <td colspan="6" align="center">
+                    Belum ada data peminjaman
+                </td>
+            </tr>
         @endforelse
     </tbody>
 </table>
