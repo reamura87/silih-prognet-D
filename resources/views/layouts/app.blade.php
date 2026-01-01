@@ -8,14 +8,19 @@
         nav {
             background: #8B0000;
             padding: 15px;
+            display: flex;
+            align-items: center;
         }
-        nav a {
+        nav a, nav button {
             color: white;
             margin-right: 15px;
             text-decoration: none;
             font-weight: bold;
+            background: none;
+            border: none;
+            cursor: pointer;
         }
-        nav a:hover {
+        nav a:hover, nav button:hover {
             text-decoration: underline;
         }
         .container {
@@ -26,11 +31,30 @@
 <body>
 
 <nav>
+    {{-- UMUM --}}
     <a href="{{ route('home') }}">Home</a>
-    <a href="{{ route('dashboard') }}">Dashboard</a>
-    <a href="{{ route('barang') }}">Barang</a>
-    <a href="{{ route('peminjaman.index') }}">Peminjaman</a>
-    <a href="{{ route('ruangan') }}">Ruangan</a>
+
+    @auth
+        {{-- USER & ADMIN --}}
+        <a href="{{ route('barang') }}">Barang</a>
+        <a href="{{ route('peminjaman.index') }}">Peminjaman</a>
+        <a href="{{ route('ruangan') }}">Ruangan</a>
+
+        {{-- KHUSUS ADMIN --}}
+        @if(auth()->user()->role === 'admin')
+            <a href="{{ route('dashboard') }}">Dashboard</a>
+        @endif
+
+        {{-- LOGOUT --}}
+        <form action="{{ route('logout') }}" method="POST" style="display:inline;">
+            @csrf
+            <button type="submit">Logout</button>
+        </form>
+    @else
+        {{-- BELUM LOGIN --}}
+        <a href="{{ route('login') }}">Login</a>
+        <a href="{{ route('register') }}">Register</a>
+    @endauth
 </nav>
 
 @if(session('success'))
