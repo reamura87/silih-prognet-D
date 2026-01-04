@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>SILIH</title>
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <style>
         body { font-family: Arial, sans-serif; margin: 0 }
         nav {
@@ -30,29 +31,34 @@
 </head>
 <body>
 
-<nav>
-    <a href="{{ route('home') }}">Home</a>
+<nav class="navbar">
+    <div class="nav-left">
+        <span class="brand">SILIH</span>
+        <a href="{{ route('home') }}">Home</a>
 
-    @auth
-        <a href="{{ route('barang') }}">Barang</a>
-        <a href="{{ route('peminjaman.index') }}">Peminjaman</a>
-        <a href="{{ route('kontak') }}">Kontak</a>
+        @auth
+            <a href="{{ route('barang') }}">Barang</a>
+            <a href="{{ route('peminjaman.index') }}">Peminjaman</a>
+            <a href="{{ route('kontak') }}">Kontak</a>
+            <a href="{{ route('profile') }}">Profile</a>
 
-        @if(auth()->user()->role === 'admin')
-            <a href="{{ route('dashboard') }}">Dashboard</a>
-        @endif
+            @if(auth()->user()->role === 'admin')
+                <a href="{{ route('dashboard') }}">Dashboard</a>
+            @endif
+        @endauth
+    </div>
 
-        <form action="{{ route('logout') }}" method="POST" style="display:inline;">
-            @csrf
-            <button type="submit"
-                style="background:none;border:none;color:white;cursor:pointer;">
-                Logout
-            </button>
-        </form>
-    @else
-        <a href="{{ route('login') }}">Login</a>
-        <a href="{{ route('register') }}">Register</a>
-    @endauth
+    <div class="nav-right">
+        @auth
+            <form action="{{ route('logout') }}" method="POST">
+                @csrf
+                <button type="submit" class="logout-btn">Logout</button>
+            </form>
+        @else
+            <a href="{{ route('login') }}">Login</a>
+            <a href="{{ route('register') }}">Register</a>
+        @endauth
+    </div>
 </nav>
 
 

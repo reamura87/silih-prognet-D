@@ -47,6 +47,11 @@ Route::middleware('auth')->group(function () {
 
     // Kontak
     Route::get('/kontak', [PageController::class, 'kontak'])->name ('kontak');
+
+    // Profile
+    Route::get('/profile', function () {
+        return view('profile');
+    })->name('profile');
 });
 
 /*
