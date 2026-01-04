@@ -1,20 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
-<h2>Profil Pengguna</h2>
-
-<table cellpadding="8">
-    <tr>
-        <td><strong>Nama</strong></td>
-        <td>{{ auth()->user()->name }}</td>
-    </tr>
-    <tr>
-        <td><strong>NIM</strong></td>
-        <td>{{ auth()->user()->nim ?? '-' }}</td>
-    </tr>
-    <tr>
-        <td><strong>Email</strong></td>
-        <td>{{ auth()->user()->email }}</td>
-    </tr>
-</table>
+<div class="card" style="max-width:400px;">
+    <h2>Profile</h2>
+    <p><b>Nama:</b> {{ auth()->user()->name }}</p>
+    <p><b>NIM:</b> {{ auth()->user()->nim }}</p>
+    <p><b>Email:</b> {{ auth()->user()->email }}</p>
+</div>
 @endsection

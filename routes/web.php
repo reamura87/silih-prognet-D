@@ -32,7 +32,9 @@ Route::get('/', function () {
 Route::middleware('auth')->group(function () {
 
     // Home
-    Route::get('/home', [PageController::class, 'home'])->name('home');
+    Route::get('/home', function () {
+        return view('home');
+    })->name('home');
 
     // Barang
     Route::get('/barang', [BarangController::class, 'index'])->name('barang');
