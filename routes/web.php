@@ -44,6 +44,9 @@ Route::middleware('auth')->group(function () {
 
     // Ruangan
     Route::get('/ruangan', [PageController::class, 'ruangan'])->name('ruangan');
+
+    // Kontak
+    Route::get('/kontak', [PageController::class, 'kontak'])->name ('kontak');
 });
 
 /*

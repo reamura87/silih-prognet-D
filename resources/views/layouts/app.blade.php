@@ -36,7 +36,7 @@
     @auth
         <a href="{{ route('barang') }}">Barang</a>
         <a href="{{ route('peminjaman.index') }}">Peminjaman</a>
-        <a href="{{ route('ruangan') }}">Ruangan</a>
+        <a href="{{ route('kontak') }}">Kontak</a>
 
         @if(auth()->user()->role === 'admin')
             <a href="{{ route('dashboard') }}">Dashboard</a>

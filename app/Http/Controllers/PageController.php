@@ -14,8 +14,8 @@ class PageController extends Controller
         return view('barang');
     }
 
-    public function ruangan()
+    public function kontak()
     {
-        return view('ruangan');
+        return view('kontak');
     }
 }
