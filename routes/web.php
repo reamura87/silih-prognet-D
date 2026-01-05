@@ -51,10 +51,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/kontak', [PageController::class, 'kontak'])->name ('kontak');
 
     // Profile
-    Route::get('/profile', function () {
-        return view('profile');
+    Route::middleware(['auth'])->get('/profile', function () {
+        return view('profile.index');
     })->name('profile');
-});
+}); 
 
 /*
 |--------------------------------------------------------------------------
