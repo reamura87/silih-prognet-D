@@ -4,34 +4,31 @@
 <div class="profile-wrapper">
     <div class="profile-card">
 
-        <div class="profile-header">
-            <h2>Profil Saya</h2>
-            <p>Informasi akun yang sedang login</p>
+        <div class="avatar">
+            <img src="{{ asset('img/avatar-default.jpg') }}" alt="Avatar">
         </div>
 
-        <div class="profile-body">
-            <div class="profile-row">
-                <span class="label">Nama</span>
-                <span class="value">{{ auth()->user()->name }}</span>
-            </div>
+        <h2 class="name">{{ auth()->user()->name }}</h2>
+        <p class="role">Mahasiswa Teknologi Informasi</p>
 
-            <div class="profile-row">
-                <span class="label">NIM</span>
-                <span class="value">{{ auth()->user()->nim ?? '-' }}</span>
-            </div>
+        <div class="profile-info">
+            <p><strong>Email:</strong> {{ auth()->user()->email }}</p>
 
-            <div class="profile-row">
-                <span class="label">Email</span>
-                <span class="value">{{ auth()->user()->email }}</span>
-            </div>
+            @if(auth()->user()->nim)
+                <p><strong>NIM:</strong> {{ auth()->user()->nim }}</p>
+            @endif
 
-            <div class="profile-row">
-                <span class="label">Role</span>
-                <span class="badge">
-                    {{ ucfirst(auth()->user()->role) }}
-                </span>
-            </div>
-        </div>
+            <p>
+                <strong>Role:</strong>
+                <span class="badge-role {{ auth()->user()->role }}">
+                {{ ucfirst(auth()->user()->role === 'admin' ? 'Administrator' : 'Mahasiswa') }}
+            </span>
+        </p>
+    </div>
+
+
+        <button class="btn-edit" disabled>Edit Profil</button>
+        <small class="note">*Profil tidak dapat diedit</small>
 
     </div>
 </div>

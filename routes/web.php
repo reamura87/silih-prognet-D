@@ -48,7 +48,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/ruangan', [PageController::class, 'ruangan'])->name('ruangan');
 
     // Kontak
-    Route::get('/kontak', [PageController::class, 'kontak'])->name ('kontak');
+    Route::get('/kontak', function () {
+        return view('kontak.index');
+    })->name('kontak');
 
     // Profile
     Route::middleware(['auth'])->get('/profile', function () {
