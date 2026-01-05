@@ -1,38 +1,38 @@
 @extends('layouts.app')
 
 @section('content')
+<link rel="stylesheet" href="{{ asset('css/kontak.css') }}">
+
 <div class="kontak-wrapper">
-    <h2>Kontak Penting</h2>
-    <p class="subtitle">Hubungi pengurus terkait jika ada kendala peminjaman</p>
+    <h1>Kontak Kami</h1>
+    <p class="subtitle">
+        Hubungi pihak terkait untuk informasi peminjaman fasilitas kampus
+    </p>
 
     <div class="kontak-grid">
 
-        {{-- Ketua Himpunan --}}
+        <!-- Ketua Himpunan -->
         <div class="kontak-card">
-            <h3>Ketua Himpunan</h3>
-            <p><strong>Nama:</strong> I Made Contoh Ketua</p>
-            <p><strong>Email:</strong> ketua@himpunan.test</p>
-            <a 
-                href="https://wa.me/6281234567890" 
-                target="_blank" 
-                class="btn-wa"
-            >
-                Hubungi via WhatsApp
-            </a>
+            <img src="{{ asset('img/avatar-default.jpg') }}" class="avatar" alt="Kaprodi">
+            <h3>Siapa Yak</h3>
+            <span class="jabatan">Ketua Himpunan Mahasiswa Teknologi Informasi</span>
+
+            <div class="info">
+                <p>📞 <a href="https://wa.me/6281299999999">0812-9999-9999</a></p>
+                <p>📧 kahim@unud.ac.id</p>
+            </div>
         </div>
 
-        {{-- Ketua Sarpras --}}
+        <!-- Kepala Divisi Sarana Prasarana -->
         <div class="kontak-card">
-            <h3>Ketua Sarpras</h3>
-            <p><strong>Nama:</strong> I Made Contoh Sarpras</p>
-            <p><strong>Email:</strong> sarpras@himpunan.test</p>
-            <a 
-                href="https://wa.me/6289876543210" 
-                target="_blank" 
-                class="btn-wa"
-            >
-                Hubungi via WhatsApp
-            </a>
+            <img src="{{ asset('img/avatar-default.jpg') }}" class="avatar" alt="Ketua Himpunan">
+            <h3>Siapa Yak</h3>
+            <span class="jabatan">Kadiv Sarana Prasarana Himpunan Mahasiswa Teknologi Informasi</span>
+
+            <div class="info">
+                <p>📞 <a href="https://wa.me/6282180809091">0821-8080-9091</a></p>
+                <p>📧 sarpras@unud.ac.id</p>
+            </div>
         </div>
 
     </div>
