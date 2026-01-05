@@ -27,7 +27,13 @@ nav {
     display: flex;
     align-items: center;
     gap: 20px; /* jarak antar menu */
+    margin-left: 20px
 }
+
+.nav-right {
+    margin-right: 20px
+}
+
 
 /* Link & tombol */
 nav a,
