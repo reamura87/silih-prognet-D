@@ -137,6 +137,7 @@ body {
 /* CARD */
 .home-card {
     background: white;
+    font-weight: bold;
     border-radius: 16px;
     padding: 24px 20px;
     box-shadow: 0 8px 18px rgba(0,0,0,0.08);
@@ -210,4 +211,40 @@ body {
     box-shadow: 0 4px 10px rgba(0,0,0,0.05);
     text-align: center;
     color: #444;
+}
+
+.homebarang {
+     background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(203, 203, 203, 0.8)),
+        url('/img/barang.jpg');
+
+    background-size: cover;
+    background-position: center;
+}
+
+.homepinjam {
+     background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(203, 203, 203, 0.8)),
+        url('/img/peminjaman.jpg');
+
+    background-size: cover;
+    background-position: center;
+}
+
+.homeprofil {
+     background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(203, 203, 203, 0.8)),
+        url('/img/profil.jpg');
+
+    background-size: cover;
+    background-position: center;
+}
+
+.homekontak {
+     background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(203, 203, 203, 0.8)),
+        url('/img/kontak.jpg');
+
+    background-size: cover;
+    background-position: center;
 }

@@ -15,25 +15,25 @@
 {{-- QUICK MENU --}}
 <div class="home-grid">
 
-    <div class="home-card">
+    <div class="home-card homebarang">
         <h3>📦 Barang</h3>
         <p>Lihat dan pinjam barang inventaris</p>
         <a href="{{ route('barang') }}" class="home-btn">Lihat Barang</a>
     </div>
 
-    <div class="home-card">
+    <div class="home-card homepinjam">
         <h3>📝 Peminjaman</h3>
         <p>Riwayat peminjaman barang</p>
         <a href="{{ route('peminjaman.index') }}" class="home-btn">Lihat Peminjaman</a>
     </div>
 
-    <div class="home-card">
+    <div class="home-card homeprofil">
         <h3>👤 Profile</h3>
         <p>Informasi akun anda</p>
         <a href="{{ route('profile') }}" class="home-btn">Buka Profile</a>
     </div>
 
-    <div class="home-card">
+    <div class="home-card homekontak">
         <h3>📞 Kontak</h3>
         <p>Hubungi Ketua Himpunan & Sarpras</p>
         <a href="{{ route('kontak') }}" class="home-btn">Lihat Kontak</a>
