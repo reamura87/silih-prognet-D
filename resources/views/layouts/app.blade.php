@@ -8,28 +8,49 @@
     <link rel="stylesheet" href="{{ asset('css/kontak.css') }}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        body { font-family: Arial, sans-serif; margin: 0 }
-        nav {
-            background: #8B0000;
-            padding: 15px;
-            display: flex;
-            align-items: center;
-        }
-        nav a, nav button {
-            color: white;
-            margin-right: 15px;
-            text-decoration: none;
-            font-weight: bold;
-            background: none;
-            border: none;
-            cursor: pointer;
-        }
-        nav a:hover, nav button:hover {
-            text-decoration: underline;
-        }
-        .container {
-            padding: 20px;
-        }
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+/* NAVBAR */
+nav {
+    background: #8B0000;
+    padding: 14px 40px; /* jarak kiri & kanan */
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* kiri & kanan terpisah */
+}
+
+/* Bagian kiri (logo + menu) */
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* jarak antar menu */
+}
+
+/* Link & tombol */
+nav a,
+nav button {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+nav a:hover,
+nav button:hover {
+    text-decoration: underline;
+}
+
+/* Container utama */
+.container {
+    padding: 25px;
+}
+
     </style>
 </head>
 <body>

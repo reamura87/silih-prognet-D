@@ -15,6 +15,12 @@ body {
 }
 
 /* KIRI */
+.brand {
+  display: inline-block;
+  margin: 20px;
+  padding-left: 20px;
+}
+
 .auth-left {
     flex: 1;
     display: flex;
