@@ -92,8 +92,15 @@ body {
 
 /* HOME HERO */
 .home-hero {
-    background: linear-gradient(135deg, #8B0000, #B22222);
+    background:
+        linear-gradient(135deg, rgba(139,0,0,0.8), rgba(178,34,34,0.8)),
+        url('/img/hmtiudayana.jpg');
+
+    background-size: cover;
+    background-position: center;
     color: white;
+    padding: 60px 30px;
+    border-radius: 12px;
     padding: 60px 30px;
     text-align: center;
     border-radius: 12px;
