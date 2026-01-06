@@ -28,11 +28,11 @@ nav {
     display: flex;
     align-items: center;
     gap: 20px; /* jarak antar menu */
-    margin-left: 20px
+    margin-left: 30px
 }
 
 .nav-right {
-    margin-right: 20px
+    margin-right: 30px
 }
 
 
