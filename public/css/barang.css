@@ -77,3 +77,68 @@
     min-height: 48px;
     margin-bottom: 6px;
 }
+
+/* WRAPPER */
+.barang-form-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+/* CARD */
+.barang-form-card {
+    background: #fff;
+    width: 420px;
+    padding: 25px;
+    border-radius: 14px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+
+.barang-form-card h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* FORM */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group input[type="file"] {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.form-group small {
+    font-size: 12px;
+    color: #777;
+    margin-top: 4px;
+}
+
+/* BUTTON */
+.btn-submit {
+    width: 100%;
+    margin-top: 10px;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background: #4d4d4d;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-submit:hover {
+    background: #000000;
+}
