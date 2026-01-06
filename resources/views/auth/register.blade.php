@@ -3,59 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <title>Register | SILIH</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="{{ asset('css/auth.css') }}">
 </head>
-<body>
+<body class="auth-body">
 
-<!-- NAVBAR AUTH -->
-<nav class="auth-navbar">
-    <div class="nav-left">SILIH</div>
-    <div class="nav-right">
-        <a href="{{ route('login') }}">Login</a>
+    <div class="login-wrapper">
+
+        <div class="login-card">
+
+            {{-- LEFT PANEL --}}
+            <div class="login-left">
+                <span class="badge">SISTEM INFORMASI</span>
+
+                <h1>
+                    Create Account<br>
+                    <span>SILIH</span>
+                </h1>
+
+                <p>
+                    Daftarkan akun untuk mengakses Sistem Informasi
+                    Layanan & Inventaris secara terintegrasi,
+                    aman, dan profesional.
+                </p>
+            </div>
+
+            {{-- RIGHT PANEL --}}
+            <div class="login-right">
+                <h2>Register Account</h2>
+                <p class="subtitle">
+                    Lengkapi data untuk membuat akun baru
+                </p>
+
+                <form method="POST" action="{{ route('register') }}">
+                    @csrf
+
+                    <div class="form-group">
+                        <label>Nama Lengkap</label>
+                        <input
+                            type="text"
+                            name="name"
+                            value="{{ old('name') }}"
+                            required>
+                        @error('name')
+                            <small style="color:red">{{ $message }}</small>
+                        @enderror
+                    </div>
+
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input
+                            type="email"
+                            name="email"
+                            value="{{ old('email') }}"
+                            required>
+                        @error('email')
+                            <small style="color:red">{{ $message }}</small>
+                        @enderror
+                    </div>
+
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input
+                            type="password"
+                            name="password"
+                            required>
+                        @error('password')
+                            <small style="color:red">{{ $message }}</small>
+                        @enderror
+                    </div>
+
+                    <div class="form-group">
+                        <label>Confirm Password</label>
+                        <input
+                            type="password"
+                            name="password_confirmation"
+                            required>
+                    </div>
+
+                    <button type="submit" class="btn-primary">
+                        DAFTAR
+                    </button>
+                </form>
+
+                <p class="register-text">
+                    Sudah punya akun?
+                    <a href="{{ route('login') }}">Login sekarang</a>
+                </p>
+            </div>
+
+        </div>
+
     </div>
-</nav>
-
-<!-- REGISTER CONTAINER -->
-<div class="auth-container">
-
-    <div class="auth-card">
-        <h2>Buat Akun SILIH</h2>
-
-        <form method="POST" action="{{ route('register') }}">
-            @csrf
-
-            <div class="form-group">
-                <input type="text" name="name" placeholder="Nama Lengkap"
-                       value="{{ old('name') }}" required>
-                @error('name') <small>{{ $message }}</small> @enderror
-            </div>
-
-            <div class="form-group">
-                <input type="email" name="email" placeholder="Email"
-                       value="{{ old('email') }}" required>
-                @error('email') <small>{{ $message }}</small> @enderror
-            </div>
-
-            <div class="form-group">
-                <input type="password" name="password" placeholder="Password" required>
-                @error('password') <small>{{ $message }}</small> @enderror
-            </div>
-
-            <div class="form-group">
-                <input type="password" name="password_confirmation"
-                       placeholder="Konfirmasi Password" required>
-            </div>
-
-            <button type="submit" class="btn-primary">Register</button>
-
-            <p class="auth-alt">
-                Sudah punya akun?
-                <a href="{{ route('login') }}">Login</a>
-            </p>
-        </form>
-    </div>
-
-</div>
 
 </body>
 </html>
