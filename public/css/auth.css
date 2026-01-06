@@ -187,3 +187,25 @@ body {
     margin-top: 15px;
     text-align: center;
 }
+
+.add-barang {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: #555;
+    border: 2px dashed #bbb;
+    transition: .3s;
+}
+
+.add-barang:hover {
+    border-color: #6c63ff;
+    color: #6c63ff;
+}
+
+.add-barang .plus {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}

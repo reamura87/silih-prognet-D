@@ -67,7 +67,7 @@ nav button:hover {
         <a href="{{ route('home') }}">Home</a>
 
         @auth
-            <a href="{{ route('barang') }}">Barang</a>
+            <a href="{{ route('barang.index') }}">Barang</a>
             <a href="{{ route('peminjaman.index') }}">Peminjaman</a>
             <a href="{{ route('kontak') }}">Kontak</a>
             <a href="{{ route('profile') }}">Profile</a>

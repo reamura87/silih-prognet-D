@@ -37,4 +37,22 @@ class BarangController extends Controller
     return back()->with('success', 'Barang berhasil dipinjam!');
 }
 
+public function create()
+{
+    return view('barang.create');
+}
+
+public function store(Request $request)
+{
+    $request->validate([
+        'nama' => 'required',
+        'stok' => 'required|integer|min:1',
+    ]);
+
+    Barang::create($request->all());
+
+    return redirect()->route('barang.index')
+           ->with('success', 'Barang berhasil ditambahkan');
+}
+
 }

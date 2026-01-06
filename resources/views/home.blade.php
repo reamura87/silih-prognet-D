@@ -18,7 +18,7 @@
     <div class="home-card homebarang">
         <h3>📦 Barang</h3>
         <p>Lihat dan pinjam barang inventaris</p>
-        <a href="{{ route('barang') }}" class="home-btn">Lihat Barang</a>
+        <a href="{{ route('barang.index') }}" class="home-btn">Lihat Barang</a>
     </div>
 
     <div class="home-card homepinjam">

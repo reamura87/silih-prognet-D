@@ -37,8 +37,12 @@ Route::middleware('auth')->group(function () {
     })->name('home');
 
     // Barang
-    Route::get('/barang', [BarangController::class, 'index'])->name('barang');
+    Route::get('/barang', [BarangController::class, 'index'])->name('barang.index');
     Route::post('/barang/{id}/pinjam', [BarangController::class, 'pinjam'])->name('barang.pinjam');
+
+    //Create Barang
+    Route::get('/barang/create', [BarangController::class, 'create'])->name('barang.create');
+    Route::post('/barang', [BarangController::class, 'store'])->name('barang.store');
 
     // Peminjaman
     Route::get('/peminjaman', [PeminjamanController::class, 'index'])->name('peminjaman.index');

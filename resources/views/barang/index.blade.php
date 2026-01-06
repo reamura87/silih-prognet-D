@@ -18,5 +18,12 @@
         </form>
     </div>
 @endforeach
+@auth
+  <!-- 🔥 BOX TAMBAH BARANG -->
+    <a href="{{ route('barang.create') }}" class="card add-barang">
+        <div class="plus">+</div>
+        <button class="btn btn-primary">Tambah Barang</button>
+    </a>
 </div>
+@endauth
 @endsection
