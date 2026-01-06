@@ -17,19 +17,19 @@
 
     <div class="home-card homebarang">
         <h3>📦 Barang</h3>
-        <p>Lihat dan pinjam barang inventaris</p>
+        <p>Lihat dan Pinjam Barang Inventaris</p>
         <a href="{{ route('barang.index') }}" class="home-btn">Lihat Barang</a>
     </div>
 
     <div class="home-card homepinjam">
         <h3>📝 Peminjaman</h3>
-        <p>Riwayat peminjaman barang</p>
+        <p>Riwayat Peminjaman Parang</p>
         <a href="{{ route('peminjaman.index') }}" class="home-btn">Lihat Peminjaman</a>
     </div>
 
     <div class="home-card homeprofil">
         <h3>👤 Profile</h3>
-        <p>Informasi akun anda</p>
+        <p>Informasi Akun Anda</p>
         <a href="{{ route('profile') }}" class="home-btn">Buka Profile</a>
     </div>
 
@@ -42,7 +42,7 @@
     @if(auth()->user()->role === 'admin')
         <div class="home-card admin-card">
             <h3>📊 Dashboard</h3>
-            <p>Kelola sistem & data peminjaman</p>
+            <p>Kelola Sistem & Data Peminjaman</p>
             <a href="{{ route('dashboard') }}" class="home-btn">Masuk Dashboard</a>
         </div>
     @endif
