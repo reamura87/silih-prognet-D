@@ -15,15 +15,22 @@
     <div class="barang-grid">
         @foreach($barangs as $barang)
             <div class="barang-card">
-                <img 
-                    src="{{ asset('img/barang/' . ($barang->gambar ?? 'default.png')) }}"
-                    alt="{{ $barang->nama }}"
-                    App\Models\Barang::first();
-                >
 
-                <h3>{{ $barang->nama }}</h3>
-                <p>Stok: <strong>{{ $barang->stok }}</strong></p>
+                {{-- BAGIAN ATAS CARD --}}
+                <div class="barang-body">
+                    <img 
+                        src="{{ asset('img/barang/' . ($barang->gambar ?: 'default.png')) }}"
+                        alt="{{ $barang->nama }}"
+                        class="barang-img"
+                    >
 
+                    <h3 class="barang-nama">{{ $barang->nama }}</h3>
+                    <p class="barang-stok">
+                        Stok: <strong>{{ $barang->stok }}</strong>
+                    </p>
+                </div>
+
+                {{-- BAGIAN BAWAH CARD (TOMBOL) --}}
                 <form action="{{ route('barang.pinjam', $barang->id) }}" method="POST">
                     @csrf
                     <button 
@@ -33,6 +40,7 @@
                         {{ $barang->stok > 0 ? 'Pinjam' : 'Habis' }}
                     </button>
                 </form>
+
             </div>
         @endforeach
     </div>

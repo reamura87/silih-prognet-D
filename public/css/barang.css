@@ -24,13 +24,16 @@
 }
 
 .barang-card {
-    background: white;
-    border-radius: 14px;
-    padding: 15px;
-    text-align: center;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-    transition: transform .2s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    padding: 20px;
+    border-radius: 16px;
+    background: #fff;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.06);
 }
+
 
 .barang-card:hover {
     transform: translateY(-5px);
@@ -40,7 +43,7 @@
     width: 100%;
     height: 140px;
     object-fit: contain;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 }
 
 .barang-card h3 {
@@ -51,14 +54,26 @@
     width: 100%;
     padding: 10px;
     border: none;
-    border-radius: 8px;
+    border-radius: 10px;
     background: #6ba6ff;
     color: white;
-    font-weight: bold;
+    font-weight: 600;
     cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-pinjam:hover {
+    background: #558de8;
 }
 
 .btn-pinjam:disabled {
     background: #ccc;
     cursor: not-allowed;
+}
+
+.barang-nama {
+    font-size: 18px;
+    font-weight: 600;
+    min-height: 48px;
+    margin-bottom: 6px;
 }
