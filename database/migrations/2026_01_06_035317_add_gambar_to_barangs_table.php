@@ -12,15 +12,11 @@ return new class extends Migration
      * @return void
      */
     public function up()
-{
-    Schema::create('barangs', function (Blueprint $table) {
-        $table->id();
-        $table->string('nama');
-        $table->integer('stok');
-        $table->timestamps();
-    });
-}
-
+    {
+        Schema::table('barangs', function (Blueprint $table) {
+            $table->string('gambar')->nullable()->after('stok');
+        });
+    }
 
     /**
      * Reverse the migrations.
@@ -29,6 +25,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('barangs');
+        Schema::table('barangs', function (Blueprint $table) {
+            $table->dropColumn('gambar');
+        });
     }
 };

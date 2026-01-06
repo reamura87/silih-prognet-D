@@ -1,0 +1,64 @@
+.barang-container {
+    padding: 20px;
+}
+
+.barang-container h2 {
+    margin-bottom: 15px;
+}
+
+.btn-add {
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 10px 16px;
+    background: #8B0000;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.barang-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.barang-card {
+    background: white;
+    border-radius: 14px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    transition: transform .2s;
+}
+
+.barang-card:hover {
+    transform: translateY(-5px);
+}
+
+.barang-card img {
+    width: 100%;
+    height: 140px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.barang-card h3 {
+    margin: 8px 0;
+}
+
+.btn-pinjam {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background: #6ba6ff;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-pinjam:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}

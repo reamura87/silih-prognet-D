@@ -1,0 +1,68 @@
+.card-table {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+.table-custom {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.table-custom thead {
+    background: #f3f4f6;
+}
+
+.table-custom th,
+.table-custom td {
+    padding: 12px 14px;
+    text-align: left;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.table-custom tbody tr:hover {
+    background: #fafafa;
+}
+
+.badge {
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.badge-green {
+    background: #76f9a4;
+    color: #166534;
+}
+
+.badge-red {
+    background: #ff4242;
+    color: #991b1b;
+}
+
+.btn-kembali {
+    background: #8B0000;
+    color: #fff;
+    border: none;
+    padding: 6px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.btn-kembali:hover {
+    background: #8B0000;
+}
+
+.muted {
+    color: #9ca3af;
+}
+
+.empty {
+    text-align: center;
+    padding: 30px;
+    color: #6b7280;
+}
