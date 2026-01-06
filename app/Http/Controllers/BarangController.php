@@ -26,7 +26,6 @@ class BarangController extends Controller
     Peminjaman::create([
         'barang_id' => $barang->id,
         'user_id' => auth()->id(),
-        'nama_peminjam' => auth()->user()->name,
         'tanggal_pinjam' => now(),
         'status' => 'Dipinjam'
     ]);

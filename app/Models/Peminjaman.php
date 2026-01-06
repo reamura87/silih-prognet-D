@@ -14,7 +14,6 @@ class Peminjaman extends Model
     protected $fillable = [
         'barang_id',
         'user_id',
-        'nama_peminjam',
         'tanggal_pinjam',
         'tanggal_kembali',
         'status',
