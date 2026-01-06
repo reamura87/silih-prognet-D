@@ -23,7 +23,7 @@
 
     <div class="home-card homepinjam">
         <h3>📝 Peminjaman</h3>
-        <p>Riwayat Peminjaman Parang</p>
+        <p>Riwayat Peminjaman Barang</p>
         <a href="{{ route('peminjaman.index') }}" class="home-btn">Lihat Peminjaman</a>
     </div>
 
@@ -54,7 +54,7 @@
     <p>
         SILIH digunakan untuk mengelola peminjaman barang inventaris
         secara terpusat, transparan, dan mudah digunakan oleh anggota
-        maupun pengurus.
+        maupun pengurus Dari Setiap Mahasia Teknologi Informasi.
     </p>
 </div>
 
