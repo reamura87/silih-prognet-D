@@ -44,14 +44,26 @@ public function create()
 public function store(Request $request)
 {
     $request->validate([
-        'nama' => 'required',
-        'stok' => 'required|integer|min:1',
+        'nama'   => 'required|string|max:255',
+        'stok'   => 'required|integer|min:0',
+        'gambar' => 'nullable|image|mimes:jpg,jpeg,png|max:2048'
     ]);
 
-    Barang::create($request->all());
+    $namaGambar = null;
+
+    if ($request->hasFile('gambar')) {
+        $namaGambar = time() . '_' . $request->gambar->getClientOriginalName();
+        $request->gambar->move(public_path('img/barang'), $namaGambar);
+    }
+
+    Barang::create([
+        'nama'   => $request->nama,
+        'stok'   => $request->stok,
+        'gambar' => $namaGambar
+    ]);
 
     return redirect()->route('barang.index')
-           ->with('success', 'Barang berhasil ditambahkan');
+        ->with('success', 'Barang berhasil ditambahkan');
 }
 
 }
