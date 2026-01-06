@@ -35,7 +35,7 @@
 
     <div class="home-card homekontak">
         <h3>📞 Kontak</h3>
-        <p>Hubungi Ketua Himpunan & Sarpras</p>
+        <p>Hubungi Ketua Himpunan & Kabid Sarpras</p>
         <a href="{{ route('kontak') }}" class="home-btn">Lihat Kontak</a>
     </div>
 
@@ -52,9 +52,9 @@
 {{-- INFO --}}
 <div class="home-info">
     <p>
-        SILIH digunakan untuk mengelola peminjaman barang inventaris
-        secara terpusat, transparan, dan mudah digunakan oleh anggota
-        maupun pengurus Dari Setiap Mahasia Teknologi Informasi.
+        SILIH digunakan untuk mengelola peminjaman barang Inventaris
+        secara Terpusat, Transparan, dan mudah digunakan oleh Anggota
+        maupun Pengurus Dari Setiap Mahasia Teknologi Informasi.
     </p>
 </div>
 
