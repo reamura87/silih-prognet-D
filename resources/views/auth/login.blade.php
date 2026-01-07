@@ -15,7 +15,7 @@
 
             {{-- LEFT PANEL --}}
             <div class="login-left">
-                <span class="badge">SISTEM LAYANAN</span>
+                <span class="badge">SISTEM INFORMASI LAYANAN INVENTARIS HIMPUNAN</span>
 
                 <h1>
                     Welcome<br>
@@ -23,7 +23,7 @@
                 </h1>
 
                 <p>
-                    Sistem Informasi Layanan & Inventaris untuk
+                    SILIH adalah sistem informasi layanan
                     pengelolaan sarana dan prasarana yang transparan,
                     rapi, dan terintegrasi.
                 </p>

@@ -15,7 +15,7 @@
 
             {{-- LEFT PANEL --}}
             <div class="login-left">
-                <span class="badge">SISTEM INFORMASI</span>
+                <span class="badge">SISTEM INFORMASI LAYANAN INVENTARIS HIMPUNAN</span>
 
                 <h1>
                     Create Account<br>
@@ -23,8 +23,7 @@
                 </h1>
 
                 <p>
-                    Daftarkan akun untuk mengakses Sistem Informasi
-                    Layanan & Inventaris secara terintegrasi,
+                    Daftarkan akun untuk mengakses SILIH secara terintegrasi,
                     aman, dan profesional.
                 </p>
             </div>
