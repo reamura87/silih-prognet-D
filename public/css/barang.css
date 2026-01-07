@@ -142,3 +142,36 @@
 .btn-submit:hover {
     background: #000000;
 }
+
+.btn-edit {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    background: #074420;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-edit:hover {
+    background: #558de8;
+}
+
+.btn-delete {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    background: #8a0d0d;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+    margin-top:20px ;
+}
+
+.btn-delete:hover {
+    background: #2a0606;
+}
