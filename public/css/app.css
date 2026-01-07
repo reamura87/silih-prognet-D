@@ -341,7 +341,7 @@ body {
    ADMIN BUTTON
 ========================= */
 .admin-btn {
-    background: #111;
+    background: #700505;
 }
 
 .admin-btn:hover {
@@ -401,6 +401,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
 }
 
 /* =========================
@@ -434,9 +435,10 @@ body {
 }
 
 .badge-admin {
-    background: #8B0000;
-    color: #fff;
+    background: #ebebeb;
+    color: #00f0f0;
 }
+
 
 /* =========================
    FORCE CENTER CONTENT CARD

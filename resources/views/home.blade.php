@@ -92,21 +92,21 @@
 
         <div class="card-icon">📞</div>
 
-        <h3>Kontak & Informasi</h3>
+        <h3>Kontak Yang Bisa di Hubungi</h3>
         <p class="card-desc">
-            Informasi kontak pengurus, ketua himpunan, serta divisi sarana
-            dan prasarana untuk kebutuhan koordinasi.
+            Halaman untuk Menghubungkan Dengan Admin SILIH (Ketua Himpunan & Kadiv Sarpras)
         </p>
 
         <ul class="card-list">
             <li>✔ Ketua Himpunan</li>
-            <li>✔ Pengurus Sarpras</li>
-            <li>✔ Kontak resmi</li>
+            <li>✔ Kadiv Sarpras</li>
         </ul>
 
         <div class="card-footer">
-            <span class="card-badge badge-info">Info</span>
-            <a href="{{ route('kontak') }}" class="home-btn">
+            <span class="card-badge badge-user">
+                {{ auth()->user()->role }}
+            </span>
+            <a href="{{ route('profile') }}" class="home-btn">
                 Lihat Kontak
             </a>
         </div>
@@ -143,6 +143,7 @@
 {{-- INFO --}}
 <div class="home-info">
     <p>
+        SILIH digunakan untuk mengelola peminjaman barang inventaris
 <<<<<<< HEAD
         SILIH digunakan untuk mengelola peminjaman barang Inventaris
         secara Terpusat, Transparan, dan mudah digunakan oleh Anggota
@@ -151,7 +152,6 @@
         <b>SILIH</b> digunakan untuk mengelola peminjaman barang inventaris
         secara terpusat, transparan, dan mudah digunakan oleh anggota
         maupun pengurus Dari Setiap Mahasia Teknologi Informasi.
->>>>>>> 57a1a616c177b39c463a2d4adada0d849956b37e
     </p>
 
     {{-- dekorasi --}}
