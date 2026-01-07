@@ -44,6 +44,14 @@ Route::middleware('auth')->group(function () {
     Route::get('/barang/create', [BarangController::class, 'create'])->name('barang.create');
     Route::post('/barang', [BarangController::class, 'store'])->name('barang.store');
 
+    //Edit Barang
+    Route::get('/barang/{id}/edit', [BarangController::class, 'edit'])->name('barang.edit');
+    Route::put('/barang/{id}', [BarangController::class, 'update'])->name('barang.update');
+
+    //Hapus Barang
+    Route::delete('/barang/{id}', [BarangController::class, 'destroy'])->name('barang.destroy');
+
+
     // Peminjaman
     Route::get('/peminjaman', [PeminjamanController::class, 'index'])->name('peminjaman.index');
     Route::post('/peminjaman/{id}/kembali', [PeminjamanController::class, 'kembali'])->name('peminjaman.kembali');

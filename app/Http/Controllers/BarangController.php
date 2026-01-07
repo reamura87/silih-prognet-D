@@ -67,4 +67,58 @@ public function store(Request $request)
         ->with('success', 'Barang berhasil ditambahkan');
 }
 
+    public function edit($id)
+{
+    $barang = Barang::findOrFail($id);
+    return view('barang.edit', compact('barang'));
+}
+
+public function update(Request $request, $id)
+{
+    $request->validate([
+        'nama'   => 'required|string|max:255',
+        'stok'   => 'required|integer|min:0',
+        'gambar' => 'nullable|image|mimes:jpg,jpeg,png|max:2048'
+    ]);
+
+    $barang = Barang::findOrFail($id);
+
+    // handle gambar baru
+    if ($request->hasFile('gambar')) {
+
+        // hapus gambar lama
+        if ($barang->gambar && file_exists(public_path('img/barang/' . $barang->gambar))) {
+            unlink(public_path('img/barang/' . $barang->gambar));
+        }
+
+        $namaGambar = time() . '_' . $request->gambar->getClientOriginalName();
+        $request->gambar->move(public_path('img/barang'), $namaGambar);
+        $barang->gambar = $namaGambar;
+    }
+
+    $barang->update([
+        'nama' => $request->nama,
+        'stok' => $request->stok,
+    ]);
+
+    return redirect()->route('barang.index')
+        ->with('success', 'Barang berhasil diupdate');
+}
+
+    public function destroy($id)
+{
+    $barang = Barang::findOrFail($id);
+
+    // hapus gambar jika ada
+    if ($barang->gambar && file_exists(public_path('img/barang/' . $barang->gambar))) {
+        unlink(public_path('img/barang/' . $barang->gambar));
+    }
+
+    $barang->delete();
+
+    return redirect()->route('barang.index')
+        ->with('success', 'Barang berhasil dihapus');
+}
+
+
 }

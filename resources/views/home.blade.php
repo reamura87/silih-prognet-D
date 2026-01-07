@@ -89,6 +89,7 @@
     </div>
 
     <div class="home-card homekontak">
+
         <div class="card-icon">📞</div>
 
         <h3>Kontak Yang Bisa di Hubungi</h3>
@@ -143,6 +144,12 @@
 <div class="home-info">
     <p>
         SILIH digunakan untuk mengelola peminjaman barang inventaris
+<<<<<<< HEAD
+        SILIH digunakan untuk mengelola peminjaman barang Inventaris
+        secara Terpusat, Transparan, dan mudah digunakan oleh Anggota
+        maupun Pengurus Dari Setiap Mahasia Teknologi Informasi.
+=======
+        <b>SILIH</b> digunakan untuk mengelola peminjaman barang inventaris
         secara terpusat, transparan, dan mudah digunakan oleh anggota
         maupun pengurus Dari Setiap Mahasia Teknologi Informasi.
     </p>

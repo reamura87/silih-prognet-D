@@ -40,8 +40,13 @@
                         {{ $barang->stok > 0 ? 'Pinjam' : 'Habis' }}
                     </button>
                 </form>
-
-            </div>
+                @auth
+                    @if(auth()->user()->role === 'admin')
+                    <a href="{{ route('barang.edit', $barang->id) }}" class="btn btn-edit"> Edit
+                    </a>
+                @endif
+                @endauth
+            </div>   
         @endforeach
     </div>
 </div>
