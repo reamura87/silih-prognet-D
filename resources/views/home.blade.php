@@ -2,7 +2,6 @@
 
 @section('content')
 
-{{-- FORCE CSS (AMAN, TIDAK BIKIN ERROR) --}}
 <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
 <div class="home-hero">
@@ -106,7 +105,7 @@
             <span class="card-badge badge-user">
                 {{ auth()->user()->role }}
             </span>
-            <a href="{{ route('profile') }}" class="home-btn">
+            <a href="{{ route('kontak') }}" class="home-btn">
                 Lihat Kontak
             </a>
         </div>
@@ -123,7 +122,7 @@
             </p>
 
             <ul class="card-list">
-                <li>✔ Kelola data barang</li>
+                <li>✔ Kelola data barang<php/li>
                 <li>✔ Validasi peminjaman</li>
                 <li>✔ Manajemen pengguna</li>
             </ul>

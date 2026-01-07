@@ -67,3 +67,22 @@
     font-size: 12px;
     color: #888;
 }
+
+/* Profile Card Hover Effect */
+.profile-card:hover {
+    transform: translateY(-6px); /* Memberikan efek transisi saat mouse berada di atas card */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15); /* Mengubah bayangan card saat hover */
+}
+
+/* Button Hover Effect */
+.btn-edit:hover {
+    background: #A52A2A; /* Mengubah warna tombol saat hover */
+    transform: translateY(-2px); /* Efek terangkat sedikit pada tombol */
+}
+
+/* Avatar Hover Effect */
+.profile-avatar:hover {
+    border-color: #A52A2A; /* Mengubah border avatar saat hover */
+    transform: scale(1.1); /* Memberikan efek zoom in pada avatar */
+    transition: all 0.3s ease; /* Menambahkan efek transisi */
+}
