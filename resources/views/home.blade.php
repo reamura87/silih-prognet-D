@@ -2,7 +2,6 @@
 
 @section('content')
 
-{{-- FORCE CSS (AMAN, TIDAK BIKIN ERROR) --}}
 <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
 <div class="home-hero">
@@ -143,12 +142,6 @@
 {{-- INFO --}}
 <div class="home-info">
     <p>
-        SILIH digunakan untuk mengelola peminjaman barang inventaris
-<<<<<<< HEAD
-        SILIH digunakan untuk mengelola peminjaman barang Inventaris
-        secara Terpusat, Transparan, dan mudah digunakan oleh Anggota
-        maupun Pengurus Dari Setiap Mahasia Teknologi Informasi.
-=======
         <b>SILIH</b> digunakan untuk mengelola peminjaman barang inventaris
         secara terpusat, transparan, dan mudah digunakan oleh anggota
         maupun pengurus Dari Setiap Mahasia Teknologi Informasi.
