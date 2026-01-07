@@ -175,3 +175,8 @@
 .btn-delete:hover {
     background: #2a0606;
 }
+
+/* Hanya sembunyikan tombol Pinjam di halaman admin */
+.admin-dashboard .barang-card .btn-pinjam {
+    display: none;
+}
