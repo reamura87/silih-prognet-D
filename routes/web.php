@@ -1,12 +1,16 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Password;
 
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\BarangController;
-use App\Http\Controllers\PeminjamanController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\PeminjamanController;
+use App\Http\Controllers\Auth\ForgotPasswordController;
+use App\Mail\welcomemail;
 
 /*
 |--------------------------------------------------------------------------
@@ -78,3 +82,34 @@ Route::middleware('auth')->group(function () {
 Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 });
+
+/*
+|--------------------------------------------------------------------------
+| WELCOME EMAIL ROUTES
+|--------------------------------------------------------------------------
+*/
+
+Route::get('/send-welcome-mail', function () {
+    Mail::to('rangga1152@example.com')->send(new welcomemail());
+});
+
+/*
+|--------------------------------------------------------------------------
+| FORGOT PASSWORD ROUTES
+|--------------------------------------------------------------------------
+*/
+Route::get('forgot-password', function () {
+    return view('auth.passwords.email');
+})->middleware('guest')->name('password.request');
+
+route::post('forgot-password', function (Illuminate\Http\Request $request) {
+    $request->validate(['email' => 'required|email']);
+
+    $status = Illuminate\Support\Facades\Password::sendResetLink(
+        $request->only('email')
+    );
+
+    return $status === Illuminate\Support\Facades\Password::RESET_LINK_SENT
+                ? back()->with(['status' => __($status)])
+                : back()->withErrors(['email' => __($status)]);
+})->middleware('guest')->name('password.email');
