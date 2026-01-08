@@ -6,6 +6,7 @@
 <div class="barang-container">
     <h2>Daftar Barang</h2>
 
+    {{-- Tombol tambah barang hanya untuk admin --}}
     @if(auth()->user()->role === 'admin')
         <a href="{{ route('barang.create') }}" class="btn-add">
             + Tambah Barang
@@ -31,23 +32,27 @@
                 </div>
 
                 {{-- BAGIAN BAWAH CARD (TOMBOL) --}}
-                <form action="{{ route('barang.pinjam', $barang->id) }}" method="POST">
-                    @csrf
-                    <button 
-                        class="btn-pinjam"
-                        {{ $barang->stok <= 0 ? 'disabled' : '' }}
-                    >
-                        {{ $barang->stok > 0 ? 'Pinjam' : 'Habis' }}
-                    </button>
-                </form>
+                @if(auth()->user()->role !== 'admin') <!-- Tombol Pinjam hanya untuk non-admin -->
+                    <form action="{{ route('barang.pinjam', $barang->id) }}" method="POST">
+                        @csrf
+                        <button 
+                            class="btn-pinjam"
+                            {{ $barang->stok <= 0 ? 'disabled' : '' }}
+                        >
+                            {{ $barang->stok > 0 ? 'Pinjam' : 'Habis' }}
+                        </button>
+                    </form>
+                @endif
+
+                {{-- Tombol Edit hanya untuk admin --}}
                 @auth
                     @if(auth()->user()->role === 'admin')
-                    <a href="{{ route('barang.edit', $barang->id) }}" class="btn btn-edit"> Edit
-                    </a>
-                @endif
+                        <a href="{{ route('barang.edit', $barang->id) }}" class="btn btn-edit"> Edit</a>
+                    @endif
                 @endauth
-            </div>   
+            </div>
         @endforeach
     </div>
 </div>
+
 @endsection

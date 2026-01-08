@@ -13,7 +13,6 @@
 
         <div class="profile-info">
             <p><strong>Email:</strong> {{ auth()->user()->email }}</p>
-            <p><strong>NIM:</strong> {{ auth()->user()->nim }}</p>
             <p>
                 <strong>Role:</strong>
                 <span class="role-badge">{{ ucfirst(auth()->user()->role === 'admin' ? 'Admin' : 'Mahasiswa') }}</span>

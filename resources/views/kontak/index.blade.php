@@ -13,7 +13,7 @@
 
         <!-- Ketua Himpunan -->
         <div class="kontak-card">
-            <img src="{{ asset('img/avatar-default.jpg') }}" class="avatar" alt="Kaprodi">
+            <img src="{{ asset('img/avatar-default.jpg') }}" class="avatar" alt="Ketua Himpunan">
             <h3>Awan Disini</h3>
             <span class="jabatan">Ketua Himpunan Mahasiswa Teknologi Informasi</span>
 
@@ -25,7 +25,7 @@
 
         <!-- Kepala Divisi Sarana Prasarana -->
         <div class="kontak-card">
-            <img src="{{ asset('img/avatar-default.jpg') }}" class="avatar" alt="Ketua Himpunan">
+            <img src="{{ asset('img/avatar-default.jpg') }}" class="avatar" alt="Kepala Divisi Sarpras">
             <h3>Reza Kurniawan</h3>
             <span class="jabatan">Kadiv Sarana Prasarana Himpunan Mahasiswa Teknologi Informasi</span>
 
