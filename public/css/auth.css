@@ -198,3 +198,61 @@ body.auth-body {
         padding: 32px 24px;
     }
 }
+
+/* ============================= */
+/* FORGOT & RESET PASSWORD PAGE */
+/* ============================= */
+
+/* Subtitle khusus forgot/reset */
+.auth-subtitle {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 26px;
+    line-height: 1.6;
+}
+
+/* Info alert (success) */
+.auth-alert {
+    background: #e6f4ea;
+    border-left: 4px solid #1e7e34;
+    color: #155724;
+    padding: 12px 14px;
+    border-radius: 6px;
+    font-size: 13px;
+    margin-bottom: 18px;
+}
+
+/* Error message */
+.auth-error {
+    font-size: 12px;
+    color: #b00020;
+    margin-top: 4px;
+}
+
+/* Button secondary (kembali login) */
+.btn-secondary {
+    display: inline-block;
+    margin-top: 18px;
+    font-size: 13px;
+    text-align: center;
+    color: #a01212;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.btn-secondary:hover {
+    text-decoration: underline;
+}
+
+/* Reset page spacing */
+.reset-spacing {
+    margin-top: 10px;
+}
+
+/* Form note */
+.form-note {
+    font-size: 12px;
+    color: #777;
+    margin-top: 14px;
+    line-height: 1.5;
+}

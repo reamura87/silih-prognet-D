@@ -1,46 +1,75 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Lupa Password | SILIH</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Reset Password') }}</div>
+    <link rel="stylesheet" href="{{ asset('css/auth.css') }}">
+</head>
+<body class="auth-body">
 
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
+<div class="login-wrapper">
+    <div class="login-card">
 
-                   <form method="POST" action="{{ route('password.email') }}">
-                        @csrf
-                        <div class="row mb-3">
-                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
+        {{-- LEFT PANEL --}}
+        <div class="login-left">
+            <span class="badge">SISTEM INFORMASI LAYANAN INVENTARIS HIMPUNAN</span>
 
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+            <h1>
+                Forgot<br>
+                <span>Password?</span>
+            </h1>
 
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Send Password Reset Link') }}
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
+            <p>
+                Jangan khawatir. Masukkan email terdaftar
+                dan kami akan mengirimkan link
+                untuk mengatur ulang password akun Anda.
+            </p>
         </div>
+
+        {{-- RIGHT PANEL --}}
+        <div class="login-right">
+            <h2>Reset Password</h2>
+            <p class="auth-subtitle">
+                Masukkan email akun SILIH Anda
+            </p>
+
+            @if (session('status'))
+                <div class="auth-alert">
+                    {{ session('status') }}
+                </div>
+            @endif
+
+            <form method="POST" action="{{ route('password.email') }}">
+                @csrf
+
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input
+                        type="email"
+                        name="email"
+                        value="{{ old('email') }}"
+                        required
+                        autofocus>
+
+                    @error('email')
+                        <div class="auth-error">{{ $message }}</div>
+                    @enderror
+                </div>
+
+                <button type="submit" class="btn-primary">
+                    KIRIM LINK RESET
+                </button>
+            </form>
+
+            <a href="{{ route('login') }}" class="btn-secondary">
+                ← Kembali ke Login
+            </a>
+        </div>
+
     </div>
 </div>
-@endsection
+
+</body>
+</html>
