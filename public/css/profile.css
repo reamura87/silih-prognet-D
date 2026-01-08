@@ -38,17 +38,37 @@
     margin-bottom: 20px;
 }
 
+.profile-info {
+    margin-top: 25px;
+    text-align: left;
+}
+
 .profile-info p {
-    margin: 8px 0;
+    display: grid;
+    grid-template-columns: max-content auto;
+    column-gap: 8px; 
+    align-items: baseline;
+    margin: 12px 0;
     color: #333;
 }
 
+.profile-info p strong {
+    text-align: right;
+    font-weight: 600;
+    padding: 0;
+    margin: 0;
+}
+
 .role-badge {
-    background: #2f80ed;
-    color: white;
-    padding: 4px 12px;
-    border-radius: 12px;
-    font-size: 13px;
+    display: inline-block;  
+    background: #e52c2c;
+    color: rgb(0, 0, 0);
+    padding: 6px 18px;
+    border-radius: 999px;
+    font-size: 14px;
+    width: auto;            
+    justify-self: start;
+    line-height: 1;
 }
 
 .btn-edit {
