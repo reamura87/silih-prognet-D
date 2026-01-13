@@ -25,7 +25,7 @@
             <div class="form-group">
                 <label>Gambar Barang</label>
                 <input type="file" name="gambar" accept="image/*">
-                <small>* JPG / PNG, max 2MB</small>
+                <small>* JPG / PNG, max 10MB</small>
             </div>
 
             <button type="submit" class="btn-submit">

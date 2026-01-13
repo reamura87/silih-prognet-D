@@ -14,6 +14,7 @@ class BarangController extends Controller
         return view('barang.index', compact('barangs'));
     }
 
+    // meminjam barang
     public function pinjam($id)
 {
     $barang = Barang::findOrFail($id);
@@ -34,7 +35,7 @@ class BarangController extends Controller
     // kurangi stok
     $barang->decrement('stok');
 
-    return back()->with('success', 'Barang berhasil dipinjam!');
+    return redirect()->route('peminjaman.index')->with('success', 'Barang berhasil dipinjam');
 }
 
 public function create()
@@ -47,7 +48,7 @@ public function store(Request $request)
     $request->validate([
         'nama'   => 'required|string|max:255',
         'stok'   => 'required|integer|min:0',
-        'gambar' => 'nullable|image|mimes:jpg,jpeg,png|max:2048'
+        'gambar' => 'nullable|image|mimes:jpg,jpeg,png|max:10240'
     ]);
 
     $namaGambar = null;

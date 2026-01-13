@@ -7,6 +7,7 @@ use App\Models\Barang;
 
 class PeminjamanController extends Controller
 {
+    // menampilkan daftar peminjaman
     public function index()
     {
         if (auth()->user()->role === 'admin') {
@@ -22,6 +23,7 @@ class PeminjamanController extends Controller
         return view('peminjaman.index', compact('peminjamans'));
     }
 
+    // mengembalikan barang
     public function kembali($id)
 {
     $peminjaman = Peminjaman::with('barang')->findOrFail($id);
@@ -35,10 +37,11 @@ class PeminjamanController extends Controller
 
     // update peminjaman
     $peminjaman->update([
-        'status' => 'Dikembalikan',
+        'status_pengembalian' => 'Dikembalikan',
         'tanggal_kembali' => now()
     ]);
 
-    return back()->with('success', 'Barang berhasil dikembalikan');
+    // untuk view jika barang berhasil dikembalikan
+    return redirect()->route('barang.index')->with('success', 'Barang berhasil dikembalikan');
 }
 }
