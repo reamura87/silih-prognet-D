@@ -80,7 +80,8 @@ public function update(Request $request, $id)
     $request->validate([
         'nama'   => 'required|string|max:255',
         'stok'   => 'required|integer|min:0',
-        'gambar' => 'nullable|image|mimes:jpg,jpeg,png|max:2048'
+        'gambar' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
+        'deskripsi' => 'nullable|string'
     ]);
 
     $barang = Barang::findOrFail($id);
@@ -101,6 +102,7 @@ public function update(Request $request, $id)
     $barang->update([
         'nama' => $request->nama,
         'stok' => $request->stok,
+        'deskripsi' => $request->deskripsi
     ]);
 
     return redirect()->route('barang.index')
