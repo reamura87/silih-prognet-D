@@ -23,6 +23,11 @@
             </div>
 
             <div class="form-group">
+                <label>Deskripsi</label>
+                <input type="text" name="deskripsi">
+            </div>
+
+            <div class="form-group">
                 <label>Gambar Barang</label>
                 <input type="file" name="gambar" accept="image/*">
                 <small>* JPG / PNG, max 10MB</small>

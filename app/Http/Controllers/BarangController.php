@@ -48,7 +48,8 @@ public function store(Request $request)
     $request->validate([
         'nama'   => 'required|string|max:255',
         'stok'   => 'required|integer|min:0',
-        'gambar' => 'nullable|image|mimes:jpg,jpeg,png|max:10240'
+        'gambar' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
+        'deskripsi' => 'nullable|string|max:1000'
     ]);
 
     $namaGambar = null;
@@ -61,7 +62,8 @@ public function store(Request $request)
     Barang::create([
         'nama'   => $request->nama,
         'stok'   => $request->stok,
-        'gambar' => $namaGambar
+        'gambar' => $namaGambar,
+        'deskripsi' => $request ->deskripsi
     ]);
 
     return redirect()->route('barang.index')
@@ -79,7 +81,8 @@ public function update(Request $request, $id)
     $request->validate([
         'nama'   => 'required|string|max:255',
         'stok'   => 'required|integer|min:0',
-        'gambar' => 'nullable|image|mimes:jpg,jpeg,png|max:2048'
+        'gambar' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
+        'deskripsi' => 'nullable|string'
     ]);
 
     $barang = Barang::findOrFail($id);
@@ -100,6 +103,7 @@ public function update(Request $request, $id)
     $barang->update([
         'nama' => $request->nama,
         'stok' => $request->stok,
+        'deskripsi' => $request->deskripsi
     ]);
 
     return redirect()->route('barang.index')
