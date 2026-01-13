@@ -28,6 +28,12 @@
             </div>
 
             <div class="form-group">
+                <label>Deskripsi</label>
+                <input type="text" name="deskripsi"
+                        value="{{ old('deskripsi', $barang->deskripsi) }}">
+            </div>
+
+            <div class="form-group">
                 <label>Gambar Barang</label>
                 <input type="file" name="gambar" accept="image/*">
                 <small>* Kosongkan jika tidak diganti</small>

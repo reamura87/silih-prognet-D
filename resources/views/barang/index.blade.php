@@ -29,6 +29,8 @@
                     <p class="barang-stok">
                         Stok: <strong>{{ $barang->stok }}</strong>
                     </p>
+
+                    <p class="barang-deskripsi">{{  $barang->deskripsi }}</p>
                 </div>
 
                 {{-- BAGIAN BAWAH CARD (TOMBOL) --}}
