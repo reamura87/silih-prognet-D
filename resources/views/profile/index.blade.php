@@ -13,8 +13,8 @@
 
         <div class="profile-info">
             <p><strong>Email:</strong> {{ auth()->user()->email }}</p>
-            <p>
-                <strong>Role:</strong>
+            <p><strong>No HP:</strong> {{ auth()->user()->no_hp ?? 'N/A' }}</p>
+            <p><strong>Role:</strong>
                 <span class="role-badge">{{ ucfirst(auth()->user()->role === 'admin' ? 'Admin' : 'Mahasiswa') }}</span>
             </p>
         </div>

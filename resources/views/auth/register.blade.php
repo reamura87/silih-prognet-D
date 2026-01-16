@@ -63,6 +63,18 @@
                     </div>
 
                     <div class="form-group">
+                        <label>No. Handphone</label>
+                        <input
+                            type="tel"
+                            name="no_hp"
+                            value="{{ old('no_hp') }}"
+                            autocomplete="tel"
+                            required>
+                        @error('no_hp')
+                            <small style="color:red">{{ $message }}</small>
+                        @enderror
+
+                    <div class="form-group">
                         <label>Password</label>
                         <input
                             type="password"
