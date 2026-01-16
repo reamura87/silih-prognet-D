@@ -37,10 +37,14 @@
             </td>
 
             <td>
-                @if($peminjaman->status === 'Dipinjam')
-                    <span class="badge badge-red">Dipinjam</span>
+                @if ($peminjaman->status === 'Pending')
+                    <span class="badge bg-warning">Pending</span>
+                @elseif ($peminjaman->status === 'Dipinjam')
+                    <span class="badge bg-primary">Dipinjam</span>
+                @elseif ($peminjaman->status === 'Dikembalikan')
+                    <span class="badge bg-success">Dikembalikan</span>
                 @else
-                    <span class="badge badge-green">Dikembalikan</span>
+                    <span class="badge bg-danger">Ditolak</span>
                 @endif
             </td>
 

@@ -81,6 +81,15 @@ Route::middleware('auth')->group(function () {
 */
 Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
+    Route::get('/admin/peminjaman/pending', [PeminjamanController::class, 'pending'])
+        ->name('admin.peminjaman.pending');
+
+    Route::post('/admin/peminjaman/{id}/acc', [PeminjamanController::class, 'acc'])
+        ->name('admin.peminjaman.acc');
+
+    Route::post('/admin/peminjaman/{id}/tolak', [PeminjamanController::class, 'tolak'])
+        ->name('admin.peminjaman.tolak');
 });
 
 /*

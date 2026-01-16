@@ -19,27 +19,20 @@ class BarangController extends Controller
 {
     $barang = Barang::findOrFail($id);
 
-    // 1. cek stok
     if ($barang->stok <= 0) {
-        return redirect()->back()->with('error', 'Stok barang habis!');
+        return back()->with('error', 'Stok barang habis!');
     }
 
-    // 2. simpan peminjaman
     Peminjaman::create([
         'barang_id' => $barang->id,
         'user_id' => auth()->id(),
         'nama_peminjam' => auth()->user()->name,
         'tanggal_pinjam' => now(),
-        'status' => 'Dipinjam',
-        'status_pengembalian' => 'Belum Dikembalikan'
+        'status' => 'Pending'
     ]);
 
-    // 3. kurangi stok
-    $barang->decrement('stok');
-
-    // 4. redirect terakhir
     return redirect()->route('peminjaman.index')
-        ->with('success', 'Barang berhasil dipinjam');
+        ->with('success', 'Menunggu persetujuan admin');
 }
 
 public function create()

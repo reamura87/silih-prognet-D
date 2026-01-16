@@ -75,6 +75,7 @@ nav button:hover {
 
             @if(auth()->user()->role === 'admin')
                 <a href="{{ route('dashboard') }}">Dashboard</a>
+                <a href="{{ route('admin.peminjaman.pending') }}">Peminjaman Pending</a>
             @endif
         @endauth
     </div>
