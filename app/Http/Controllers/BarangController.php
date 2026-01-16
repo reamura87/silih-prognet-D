@@ -22,6 +22,9 @@ class BarangController extends Controller
     if ($barang->stok <= 0) {
         return redirect()->back()->with('error', 'Stok barang habis!');
     }
+    else {
+        return redirect()->route('peminjaman.index')->with('success', 'Barang Berhasil Dipinjam');
+    }
 
     // simpan riwayat peminjaman
     Peminjaman::create([
