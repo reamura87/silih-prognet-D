@@ -25,23 +25,23 @@ class PeminjamanController extends Controller
 
     // mengembalikan barang
     public function kembali($id)
-{
-    $peminjaman = Peminjaman::with('barang')->findOrFail($id);
+    {
+        $peminjaman = Peminjaman::with('barang')->findOrFail($id);
 
-    if ($peminjaman->status === 'Dikembalikan') {
-        return back();
+        if ($peminjaman->status === 'Dikembalikan') {
+            return back();
+        }
+
+        // tambah stok barang
+        $peminjaman->barang->increment('stok');
+
+        // update peminjaman
+        $peminjaman->update([
+            'status' => 'Dikembalikan',
+            'tanggal_kembali' => now()
+        ]);
+
+        // untuk view jika barang berhasil dikembalikan
+        return redirect()->route('barang.index')->with('success', 'Barang berhasil dikembalikan');
     }
-
-    // tambah stok barang
-    $peminjaman->barang->increment('stok');
-
-    // update peminjaman
-    $peminjaman->update([
-        'status_pengembalian' => 'Dikembalikan',
-        'tanggal_kembali' => now()
-    ]);
-
-    // untuk view jika barang berhasil dikembalikan
-    return redirect()->route('barang.index')->with('success', 'Barang berhasil dikembalikan');
-}
 }
